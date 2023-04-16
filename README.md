@@ -50,13 +50,21 @@ The histogram for distribution of songs' length after removing outliers is illus
 Moreover, we should also look at the distribution for frequency of notes. This is because in the end, we would like to make sure our model performs at least better than a model always predicting the most frequent note. The mode (most frequent MIDI note) is 42, and the histogram of note frequency distribution is shown below:
 
 <img src="images/note_freq.png" width="500">
+
 ## Data Transformation
+
 ## Model Figure
+
 ## Model Parameters
+
 ## Model Examples
+
 ## Training Curve
+
 ## Hyperparameter Tuning
+
 ## Quantitative Measures
+
 Loss Cross Entropy was being used to measure the error of the model since the output is categorical (an integer from 0 to 127), and percentage of correct prediction is used as accuracy rate.
 $$L_{CE} = -\sum_{i = 1}^{n}t_ilogy_i$$
 $$\text{Accuracy} = \frac{\text{Number of correct predictions}}{\text{Number of data points}}$$
