@@ -1,10 +1,10 @@
-# Music-Generation-Transformer
-# Music Generation AI Model
+# Music Generation Transformer
 ## Introduction
+This project use transformer architecture to produce music. Input to the model will be a sequence of 40 midi notes and the output will be prediction for the next note. 
 ## Data Source
-The dataset that was being used was downloaded from https://colinraffel.com/projects/lmd/. The model use Clean MIDI subset.
+The dataset that was being used was downloaded from https://colinraffel.com/projects/lmd/. The model uses Clean MIDI subset.
 ## Data Split
-60% of the data is training data, 20% is validation, and 20% is testing data. There are 17239 midi files in total, the first 10344 songs is training data, the next 3447 songs is validation data, and the remainings is test data.
+Due to restriction in RAM, we had to pick a random subset of 100 songs from Clean MIDI set to work with. The chosen songs are stored in <a href="https://drive.google.com/drive/folders/1ffu0J6SJt_soSpeH1jP68LV0c-MUVdV2?usp=sharing" target="_blank">Google Drive</a>
 ## Data Summary
 ## Data Transformation
 ## Model Figure
