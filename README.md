@@ -29,7 +29,7 @@ or below 3 would be categorized an outlier. In the second method, any data point
 (Q1 − 3IQR, Q3 + 3IQR) is considered an outlier. However, the first method did not work since the
 number of outlier based on that method is 1 only. This is due to extreme outlier that increased the
 mean, and enlarged variance. The second method worked better since IQR is robust to outliers. After
-looking at the outliers, every song whose length is above 95% of all songs' length will be removed.
+looking at the outliers, every song whose length is above Q3 + 3IQR of all songs' length will be removed.
 
 Below is the summary of TO BE FILLED IN songs' length after removing outliers:
 
