@@ -7,6 +7,7 @@ The dataset that was being used was downloaded from <a href="https://colinraffel
 Due to restriction in RAM, we had to pick a random subset of 99 songs from Clean MIDI to work with. The chosen songs are stored in <a href="https://drive.google.com/drive/folders/1ffu0J6SJt_soSpeH1jP68LV0c-MUVdV2?usp=sharing" target="_blank">Google Drive</a>. 60% are training data, 20% are validation data, and the remaining is test data. We decided to split by songs instead of tokenizing the notes, then splitting train-validation-test because we would like to make sure no song would appear in both training and test set, since several parts of a song might sound similar, and thus increase in test accuracy. This would not be a good indicator for how well our model performs on unseen data.
 ## Data Summary
 Below is the summary of 99 songs' length initially:
+
 Count| 99 |
 --- | --- |
 Mean | 8111.90 |
@@ -16,8 +17,10 @@ Min | 430 |
 50%| 6161 |
 75%| 9450 |
 Max| 60878 |
-\
-According to the table, the weighted average song length is 8111.90 while the median of the song length is 6161. This indicates that the data is heavily right skewed, which caused by extremely large observation. Moreover, the correct measure of central tendency here is median due to the existence of extreme outliers that affected both mean and standard deviation. Therefore, we decided to remove the song whose duration is exceptionally long so that the effect of this song (if it ends up in training set) will not outweigh the effect of the majority of other songs.
+
+
+According to the table, the weighted average song length is 8111.90 while the median of the song length is 6161. This indicates that the data is heavily right skewed, which caused by extremely large observation. Moreover, the correct measure of central tendency here is median due to the existence of extreme outliers that affected both mean and standard deviation. Therefore, we decided to remove the song whose duration is exceptionally long so that the effect of this song (if it ends up in training set) will not outweigh the effect of the majority of other songs. Before removing outliers, we would like to check the histogram:
+
 ## Data Transformation
 ## Model Figure
 ## Model Parameters
