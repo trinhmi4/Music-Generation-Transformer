@@ -4,7 +4,7 @@ This project use transformer architecture to produce music. Input to the model w
 ## Data Source
 The dataset that was being used was downloaded from <a href="https://colinraffel.com/projects/lmd/" target="_blank">The Lakh MIDI Dataset</a>. The model uses Clean MIDI subset.
 ## Data Split
-Due to restriction in RAM, we had to pick a random subset of 100 songs from Clean MIDI set to work with. The chosen songs are stored in <a href="https://drive.google.com/drive/folders/1ffu0J6SJt_soSpeH1jP68LV0c-MUVdV2?usp=sharing" target="_blank">Google Drive</a>
+Due to restriction in RAM, we had to pick a random subset of 100 songs from Clean MIDI to work with. The chosen songs are stored in <a href="https://drive.google.com/drive/folders/1ffu0J6SJt_soSpeH1jP68LV0c-MUVdV2?usp=sharing" target="_blank">Google Drive</a>. Out of 100 songs, 60 are training data, 20 are validation data, and the remaining is test data. We decided to split by songs instead of tokenizing the notes, then splitting train-validation-test because we would like to make sure no song would appear in both training and test set, since several parts of a song might sound similar, and thus increase in test accuracy. This would not be a good indicator for how well our model performs on unseen data.
 ## Data Summary
 ## Data Transformation
 ## Model Figure
