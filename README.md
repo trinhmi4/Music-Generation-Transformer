@@ -19,9 +19,29 @@ Min | 430 |
 Max| 60878 |
 
 
-According to the table, the weighted average song length is 8111.90 while the median of the song length is 6161. This indicates that the data is heavily right skewed, which caused by extremely large observation. Moreover, the correct measure of central tendency here is median due to the existence of extreme outliers that affected both mean and standard deviation. Therefore, we decided to remove the song whose duration is exceptionally long so that the effect of this song (if it ends up in training set) will not outweigh the effect of the majority of other songs. Before removing outliers, we would like to check the histogram:\
+According to the table, the weighted average song length is 8111.90 while the median of the song length is 6161. This indicates that the data is heavily right skewed, which caused by extremely large observation. Moreover, the correct measure of central tendency here is median due to the existence of extreme outliers that affected both mean and standard deviation. Therefore, we decided to remove the song whose duration is exceptionally long so that the effect of this song (if it ends up in training set) will not outweigh the effect of the majority of other songs. Before removing outliers, we would like to check the histogram:
 
 ![Please check image folder](images/hist.png)
+
+Two methods for detecting outliers were being used were detecting outliers
+by z-score and detecting outliers by IQR. In the first method, any data point having z-score above 3
+or below 3 would be categorized an outlier. In the second method, any data point outside the interval
+(Q1 − 3IQR, Q3 + 3IQR) is considered an outlier. However, the first method did not work since the
+number of outlier based on that method is 1 only. This is due to extreme outlier that increased the
+mean, and enlarged variance. The second method worked better since IQR is robust to outliers. After
+looking at the outliers, every song whose length is above 95% of all songs' length will be removed.
+
+Below is the summary of TO BE FILLED IN songs' length after removing outliers:
+
+Count| 99 |
+--- | --- |
+Mean | 8111.90 |
+Std | 7468.50 |
+Min | 430 |
+25% | 4293 |
+50%| 6161 |
+75%| 9450 |
+Max| 60878 |
 
 ## Data Transformation
 ## Model Figure
