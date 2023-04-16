@@ -1,6 +1,6 @@
 # Music Generation Transformer
 ## Introduction
-This project use transformer architecture to produce music. Input to the model will be a sequence of 40 midi notes and the output will be prediction for the next note. 
+This project use a transformer model to produce music. Transformer is a type of neural network architecture that exploits attention mechanism, and normally take a sequence of inputs and produce a sequence of output. In our project, input to the model will be a sequence of 40 midi notes and the output will be a prediction for the next note. 
 ## Data Source
 The dataset that was being used was downloaded from <a href="https://colinraffel.com/projects/lmd/" target="_blank">The Lakh MIDI Dataset</a>. The model uses Clean MIDI subset.
 ## Data Split
