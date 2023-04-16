@@ -54,6 +54,10 @@ The histogram for distribution of songs' length after removing outliers is illus
 ## Training Curve
 ## Hyperparameter Tuning
 ## Quantitative Measures
+Loss Cross Entropy was being used to measure the error of the model since the output is categorical (an integer from 0 to 127), and percentage of correct prediction is used as accuracy rate.
+$$L_{CE} = -\sum_{i = 1}^{n}t_ilogy_i$$
+$$\text{Accuracy} = \frac{\text{Number of correct predictions}}{\text{Number of data points}}$$
+
 ## Quantitative and Qualitative Results
 ## Justification of Results
 ## Ethical Consideration
