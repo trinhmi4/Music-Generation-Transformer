@@ -26,22 +26,26 @@ According to the table, the weighted average song length is 8111.90 while the me
 Two methods for detecting outliers were being used were detecting outliers
 by z-score and detecting outliers by IQR. In the first method, any data point having z-score above 3
 or below 3 would be categorized an outlier. In the second method, any data point outside the interval
-(Q1 − 3IQR, Q3 + 3IQR) is considered an outlier. However, the first method did not work since the
+(Q1 − 1.5IQR, Q3 + 1.5IQR) is considered an outlier. However, the first method did not work since the
 number of outlier based on that method is 1 only. This is due to extreme outlier that increased the
 mean, and enlarged variance. The second method worked better since IQR is robust to outliers. After
-looking at the outliers, every song whose length is above Q3 + 3IQR of all songs' length will be removed.
+looking at the outliers, every song whose length is above Q3 + 1.5IQR of all songs' length will be removed.
 
 Below is the summary of TO BE FILLED IN songs' length after removing outliers:
 
-Count| 99 |
+Count| 85 |
 --- | --- |
-Mean | 8111.90 |
-Std | 7468.50 |
+Mean | 6532.02 |
+Std | 3533.75|
 Min | 430 |
-25% | 4293 |
-50%| 6161 |
-75%| 9450 |
-Max| 60878 |
+25% | 4060 |
+50%| 6063 |
+75%| 8439 |
+Max| 16472 |
+
+The histogram for distribution of songs' length after removing outliers is illustrated below:
+
+![Please check image folder](images/hist-after-outliers.png)
 
 ## Data Transformation
 ## Model Figure
