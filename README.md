@@ -31,7 +31,7 @@ number of outlier based on that method is 1 only. This is due to extreme outlier
 mean, and enlarged variance. The second method worked better since IQR is robust to outliers. After
 looking at the outliers, every song whose length is above Q3 + 1.5IQR of all songs' length will be removed.
 
-Below is the summary of TO BE FILLED IN songs' length after removing outliers:
+Below is the summary of 46 songs' length after removing outliers:
 
 Count| 46 |
 --- | --- |
