@@ -2,7 +2,7 @@
 ## Introduction
 This project use transformer architecture to produce music. Input to the model will be a sequence of 40 midi notes and the output will be prediction for the next note. 
 ## Data Source
-The dataset that was being used was downloaded from https://colinraffel.com/projects/lmd/. The model uses Clean MIDI subset.
+The dataset that was being used was downloaded from <a href="https://colinraffel.com/projects/lmd/" target="_blank">The Lakh MIDI Dataset</a>. The model uses Clean MIDI subset.
 ## Data Split
 Due to restriction in RAM, we had to pick a random subset of 100 songs from Clean MIDI set to work with. The chosen songs are stored in <a href="https://drive.google.com/drive/folders/1ffu0J6SJt_soSpeH1jP68LV0c-MUVdV2?usp=sharing" target="_blank">Google Drive</a>
 ## Data Summary
