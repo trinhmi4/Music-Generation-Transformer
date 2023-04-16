@@ -33,20 +33,23 @@ looking at the outliers, every song whose length is above Q3 + 1.5IQR of all son
 
 Below is the summary of TO BE FILLED IN songs' length after removing outliers:
 
-Count| 85 |
+Count| 91 |
 --- | --- |
-Mean | 6532.02 |
-Std | 3533.75|
+Mean | 6504.41 |
+Std | 3494.89|
 Min | 430 |
-25% | 4060 |
-50%| 6063 |
-75%| 8439 |
+25% | 4023.5 |
+50%| 5979 |
+75%| 8489 |
 Max| 16472 |
 
 The histogram for distribution of songs' length after removing outliers is illustrated below:
 
 <img src="images/hist-after-outliers.png" width="500">
 
+Moreover, we should also look at the distribution for frequency of notes. This is because in the end, we would like to make sure our model performs at least better than a model always predicting the most frequent note. The mode (most frequent MIDI note) is 42, and the histogram of note frequency distribution is shown below:
+
+<img src="images/note_freq.png" width="500">
 ## Data Transformation
 ## Model Figure
 ## Model Parameters
@@ -59,7 +62,9 @@ $$L_{CE} = -\sum_{i = 1}^{n}t_ilogy_i$$
 $$\text{Accuracy} = \frac{\text{Number of correct predictions}}{\text{Number of data points}}$$
 
 ## Quantitative and Qualitative Results
+
 ## Justification of Results
+
 ## Ethical Consideration
 Since the model learned from existing data, so if someone use the model to generate music and make
 money on it, this can be thought of as using some original artists’ work without rewarding or giving
