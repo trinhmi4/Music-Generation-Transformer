@@ -82,4 +82,4 @@ art at a much faster rate. Therefore, this seems to invalidate real artists’ e
 ## Author
 Ali: Data transformation, provided the starting code for transformer\
 Ramzi: Worked on fixing the code for positional encoding\
-Minh: Data summary, write up readme file
+Minh: Data exploration, write up readme file
