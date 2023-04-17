@@ -71,7 +71,15 @@ Count parameters here, where the parameters come from
 
 The first example is from test set and the model predicted correctly:
 
+INSERT GROUND TRUTH
+
+INSERT MODEL PREDICTION
+
 The second example is from test set and the model predicted incorrectly:
+
+INSERT GROUND TRUTH
+
+INSERT MODEL PREDICTION
 
 ## Training Curve
 
@@ -81,11 +89,12 @@ INSERT TRAINING CURVE HERE
 
 ## Hyperparameter Tuning
 
-Our hyperparameter is .... We tuned the hyperparameters by running the model with NUMBER OF different combinations of hyperparmeters that includes .... 
+Our hyperparameter is .... We tuned the hyperparameters by running the model with NUMBER OF different combinations of hyperparmeters that includes learning rate, batch size, number of epochs.
 
 ## Quantitative Measures
 
-Loss function that was being used is ...
+Loss function that was being used is loss cross entropy
+$$L_{CE} = \sum_{i=1}^{N} t_i \log{y_i}$$
 $$\text{Accuracy} = \frac{\text{Number of correct predictions}}{\text{Number of data points}}$$
 
 ## Quantitative and Qualitative Results
@@ -101,7 +110,7 @@ The test accuracy is ....
 
 Suppose there is a model that always predict the most frequent note (42), then the test accuracy of the hypothetical model is ...
 
-Therefore, the result obtain from our transformer model is acceptable. Moreover, predicting music is a difficult task since ...
+Therefore, the result obtain from our transformer model is acceptable. Moreover, predicting music is a difficult task since music depends on the artist, and different artist might have their own style, let alone if different music genre will have different melody. It is difficult to capture the pattern in art work since it offers lots of freedom and creativity. Moreover, the model was trained on mostly pop music, which means there is no guarantee the model will work well on other genres such as blues. The project can be extended to be a model whose input is sequence of notes, and output sequence of notes (until end of song) as well. This might be a better use of transformer since it makes use of decoder architecture that being parsed in the predicted output to generate even more notes. However, due to restricted computational resource, we could only build a model that predicts the next note given a sequence of 40 notes.
 
 ## Ethical Consideration
 Since the model learned from existing data, so if someone use the model to generate music and make
@@ -109,8 +118,6 @@ money on it, this can be thought of as using some original artists’ work witho
 credit to them. Moreover, AI generated music would also be unfair to the artists since they had to
 spent a great amount of hours to create art whereas the model learnt from them and is able to create
 art at a much faster rate. Therefore, this seems to invalidate real artists’ effort.
-
-LIMITATION OF THE MODEL AND TRAINING DATA.
 
 ## Author
 Ali: Data transformation, provided the starting code for transformer\
