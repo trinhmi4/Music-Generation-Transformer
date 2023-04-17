@@ -53,6 +53,12 @@ Moreover, we should also look at the distribution for frequency of notes. This i
 
 ## Data Transformation
 
+Since there are 128 possible notes on a MIDI device, and they range from 0 to 127, we created one hot vector with 128 entries.For example, a middle C is a note number 60 will be denoted by number 1 at index 60 and 0 everywhere else. Moreover, a note 0 never appears in any of the song, so we used a note 0 (numbered 1 at the first index and 0 everywhere else) to indicate the end of a song. 
+
+We first fetch every note from a specific song, then we form sequences of 40 notes each as inputs to our model, and the note immediately the $40^{th}$ note is used as ground truth. For example, one valid pair of input-output is (($1^{st}$ note, $2^{nd}$ note,..., $40^{th}$ note), $41^{st}$ note).
+
+Next, we convert each note in our input into one hot vector. Therefore, we have $40$ notes $\times$ $128$ entries per note = 5120 entries for one input data point. We implement the above process for every training points in our training set. 
+
 ## Model Figure
 
 ## Model Parameters
