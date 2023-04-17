@@ -83,11 +83,12 @@ The best validation accuracy is.... with training loss of ....
 
 The test accuracy is ....
 
+
+## Justification of Results
+
 Suppose there is a model that always predict the most frequent note (42), then the test accuracy of the hypothetical model is ...
 
 Therefore, the result obtain from our transformer model is acceptable. Moreover, predicting music is a difficult task since ...
-
-## Justification of Results
 
 ## Ethical Consideration
 Since the model learned from existing data, so if someone use the model to generate music and make
