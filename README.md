@@ -61,13 +61,15 @@ Next, we convert each note in our input into one hot vector. Therefore, we have 
 
 ## Model Figure
 
-Our transformer is a bit different than the standard transformer since we only output one note due to restricted computational resource. However, if the project is replicated to produce sequence of notes instead of one note, we can parsed in predicted output to the decoder and use masked multi head attention with a layer "Add and Norm" to combine with output from encode. 
+Our transformer is a bit different than the standard transformer since we only output one note due to restricted computational resource. The number of times the encoder and decoder got repeated is TO BE FILLED IN NUMBER OF LAYERS.However, if the project is replicated to produce sequence of notes instead of one note, we can parsed in predicted output to the decoder and use masked multi head attention with a layer "Add and Norm" to combine with output from encode. 
 
 <img src="images/Transformer.drawio.png" width="500">
 
 Below is further details for Multihead Attention layer, Add and Norm layer, Feed Forward layer:
 
-INSERT MHA
+For Multihead attention layer, the input is the output of model input embedding and position encoding layers, which give (Number of samples, Sequence Length, Embedding Size) shaped matrix. There are three distinct linear layers for query, key, and value since they have their own weights.
+
+<img src="images/Attention.drawio.png" width="500">
 
 INSERT ADD and NORM
 
@@ -77,7 +79,7 @@ The Linear layer is just applied the following formula
 $$z = Wx + b$$
 
 Softmax layer is the implementation of the following formula
-$$y = \frac{e^{z_i}}{\sum_{j = 1}^{K}e^{z_j}}$$
+$$y_i = \dfrac{e^{z_i}}{\sum e^{z_j}}$$
 
 Then the predicted output would be the category that receives highest probability.
 ## Model Parameters
