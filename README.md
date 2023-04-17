@@ -65,7 +65,7 @@ Our transformer is a bit different than the standard transformer since we only o
 
 <img src="images/Transformer.drawio.png" width="500">
 
-Below is further details for Multihead Attention layer, Add and Norm layer, Feed Forward layer:
+Below is further details for Multihead Attention layer and Add and Norm layer:
 
 For Multihead attention layer, the input is the output of model input embedding and position encoding layers, which give (Number of samples, Sequence Length, Embedding Size) shaped matrix. There are three distinct linear layers for query, key, and value since they have their own weights.
 
@@ -74,8 +74,6 @@ For Multihead attention layer, the input is the output of model input embedding 
 The add step is a residual connection $F(x) + x$, and followed by normalization layer.
 
 <img src="images/Norm.drawio.png" width="500">
-
-INSERT FEED FORWARD
 
 The Linear layer is just applied the following formula
 $$z = Wx + b$$
