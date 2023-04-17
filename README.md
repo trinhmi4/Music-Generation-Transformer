@@ -71,7 +71,9 @@ For Multihead attention layer, the input is the output of model input embedding 
 
 <img src="images/Attention.drawio.png" width="500">
 
-INSERT ADD and NORM
+The add step is a residual connection $F(x) + x$, and followed by normalization layer.
+
+<img src="images/Norm.drawio.pngg" width="500">
 
 INSERT FEED FORWARD
 
