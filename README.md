@@ -77,6 +77,16 @@ $$\text{Accuracy} = \frac{\text{Number of correct predictions}}{\text{Number of 
 
 ## Quantitative and Qualitative Results
 
+The best training accuracy is.... with training loss of ....
+
+The best validation accuracy is.... with training loss of ....
+
+The test accuracy is ....
+
+Suppose there is a model that always predict the most frequent note (42), then the test accuracy of the hypothetical model is ...
+
+Therefore, the result obtain from our transformer model is acceptable. Moreover, predicting music is a difficult task since ...
+
 ## Justification of Results
 
 ## Ethical Consideration
