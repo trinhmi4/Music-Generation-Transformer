@@ -77,7 +77,7 @@ The Linear layer is just applied the following formula
 $$z = Wx + b$$
 
 Softmax layer is the implementation of the following formula
-$$y = \frac{e^{z_i}}{\sum_{j = 1}^K e^{z_j}}$$
+$$y = \frac{e^{z_i}}{\sum_{j = 1}^{K}e^{z_j}}$$
 
 Then the predicted output would be the category that receives highest probability.
 ## Model Parameters
