@@ -140,7 +140,7 @@ INSERT MODEL PREDICTION
 
 Below is the training curve of our final model where blue line represents performance on training set and orange represents model performance on validation set:
 
-INSERT TRAINING CURVE HERE
+<img src="images/training_curve.png" width="500">
 
 ## Hyperparameter Tuning
 
