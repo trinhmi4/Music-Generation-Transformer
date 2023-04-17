@@ -84,7 +84,43 @@ $$y_i = \dfrac{e^{z_i}}{\sum e^{z_j}}$$
 Then the predicted output would be the category that receives highest probability.
 ## Model Parameters
 
-Count parameters here, where the parameters come from
+Below is the summary of number of parameters in our model:
+
+Layer| Number of parameter |
+--- | --- |
+Input layer | 0 |
+Layer Normalization | 256|
+Positional Encoding| 0 |
+MultiHead Attention | 131968 |
+Add| 0 |
+Normalization| 257|
+Dense| 16512|
+Add| 0 |
+Normalization| 257|
+MultiHead Attention | 131968 |
+Add| 0 |
+Normalization| 257|
+Dense| 16512|
+Add| 0 |
+Normalization| 257|
+MultiHead Attention | 131968 |
+Add| 0 |
+Normalization| 257|
+Dense| 16512|
+Add| 0 |
+Normalization| 257|
+MultiHead Attention | 131968 |
+Add| 0 |
+Normalization| 257|
+Dense| 16512|
+Add| 0 |
+Normalization| 257|
+Global Average Pooling | 0
+Drop out | 0
+Dense | 16512
+Total number of params | 612744
+Trainable Params | 610688
+Non-trainable params (from normalization): 2056
 
 ## Model Examples
 
