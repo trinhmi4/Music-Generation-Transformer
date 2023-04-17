@@ -117,3 +117,6 @@ LIMITATION OF THE MODEL AND TRAINING DATA.
 Ali: Data transformation, provided the starting code for transformer\
 Ramzi: Worked on fixing the code for positional encoding\
 Minh: Data exploration, write up readme file
+
+## References
+- Lab 5 from CSC311 Fall 2022
