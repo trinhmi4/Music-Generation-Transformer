@@ -112,6 +112,7 @@ spent a great amount of hours to create art whereas the model learnt from them a
 art at a much faster rate. Therefore, this seems to invalidate real artists’ effort.
 
 LIMITATION OF THE MODEL AND TRAINING DATA.
+
 ## Author
 Ali: Data transformation, provided the starting code for transformer\
 Ramzi: Worked on fixing the code for positional encoding\
