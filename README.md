@@ -61,13 +61,27 @@ Next, we convert each note in our input into one hot vector. Therefore, we have 
 
 ## Model Figure
 
+Insert model diagram here
+
 ## Model Parameters
+
+Count parameters here, where the parameters come from
 
 ## Model Examples
 
+The first example is from test set and the model predicted correctly:
+
+The second example is from test set and the model predicted incorrectly:
+
 ## Training Curve
 
+Below is the training curve of our final model where blue line represents performance on training set and orange represents model performance on validation set:
+
+INSERT TRAINING CURVE HERE
+
 ## Hyperparameter Tuning
+
+Our hyperparameter is .... We tuned the hyperparameters by running the model with NUMBER OF different combinations of hyperparmeters that includes .... 
 
 ## Quantitative Measures
 
@@ -96,6 +110,8 @@ money on it, this can be thought of as using some original artists’ work witho
 credit to them. Moreover, AI generated music would also be unfair to the artists since they had to
 spent a great amount of hours to create art whereas the model learnt from them and is able to create
 art at a much faster rate. Therefore, this seems to invalidate real artists’ effort.
+
+LIMITATION OF THE MODEL AND TRAINING DATA.
 ## Author
 Ali: Data transformation, provided the starting code for transformer\
 Ramzi: Worked on fixing the code for positional encoding\
