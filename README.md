@@ -4,7 +4,7 @@ This project use a transformer model to produce music. Transformer is a type of 
 ## Data Source
 The dataset that was being used was downloaded from <a href="https://colinraffel.com/projects/lmd/" target="_blank">The Lakh MIDI Dataset</a>. The model uses Clean MIDI subset.
 ## Data Split
-Due to restriction in RAM, we had to pick a random subset of 51 songs from Clean MIDI to work with. The chosen songs are stored in <a href="https://drive.google.com/drive/folders/1ffu0J6SJt_soSpeH1jP68LV0c-MUVdV2?usp=sharing" target="_blank">Google Drive</a>. 60% are training data, 20% are validation data, and the remaining is test data. We decided to split by songs instead of tokenizing the notes, then splitting train-validation-test because we would like to make sure no song would appear in both training and test set, since several parts of a song might have the same melody, and thus increase in test accuracy. This would not be a good indicator for how well our model performs on unseen data.
+Due to restriction in computational resources, we had to pick a random subset of 51 songs from Clean MIDI to work with. The chosen songs are stored in <a href="https://drive.google.com/drive/folders/1ffu0J6SJt_soSpeH1jP68LV0c-MUVdV2?usp=sharing" target="_blank">Google Drive</a>. 60% are training data, 20% are validation data, and the remaining is test data. We decided to split by songs instead of tokenizing the notes, then splitting train-validation-test because we would like to make sure no song would appear in both training and test set, since several parts of a song might have the same melody, and thus increase in test accuracy. This would not be a good indicator for how well our model performs on unseen data.
 ## Data Summary
 Below is the summary of 99 songs' length initially:
 
@@ -144,7 +144,16 @@ Below is the training curve of our final model where blue line represents perfor
 
 ## Hyperparameter Tuning
 
-Our hyperparameter is .... We tuned the hyperparameters by running the model with NUMBER OF different combinations of hyperparmeters that includes learning rate, batch size, number of epochs.
+Our hyperparameter is number of epochs, batch size, dropout rate, number of layers, number of heads, and model size. We tuned the hyperparameters by running the model with different combinations of hyperparmeters
+
+Hyperparameters| Set of values |
+--- | --- |
+Model size | 256, 512 |
+Number of Heads | 4, 8, 16|
+Number of layers | 4, 8|
+Dropout rate | 0.1, 0.2|
+Number of epochs | 5, 10, 15, 20|
+Batch size | 32, 64, 128|
 
 ## Quantitative Measures
 
