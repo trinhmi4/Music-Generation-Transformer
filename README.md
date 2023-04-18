@@ -183,8 +183,8 @@ spent a great amount of hours to create art whereas the model learnt from them a
 art at a much faster rate. Therefore, this seems to invalidate real artists’ effort.
 
 ## Author
-Ali: Data transformation, provided the starting code for transformer\
-Ramzi: Worked on fixing the code for positional encoding\
+Ali: Data transformation, pair coding with Ramzi to write code for transformer
+Ramzi: pair coding with Ali to write code for transformer, provide code for graphing model performance
 Minh: Data exploration, write up readme file
 
 ## References
