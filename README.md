@@ -145,20 +145,21 @@ Below is the training curve of our final model where blue line represents perfor
 
 ## Hyperparameter Tuning
 
-Our hyperparameter is number of epochs, batch size, dropout rate, number of layers, number of heads, and model size. We tuned the hyperparameters by running the model with different combinations of hyperparmeters
+Our hyperparameter is learning rate, decay steps, decay rate, dropout rate, number of layers, number of heads, and model size. We tuned the hyperparameters by running the model with different combinations of hyperparmeters
 
 Hyperparameters| Set of values |
 --- | --- |
-Model size | 256, 512 |
-Number of Heads | 4, 8, 16|
-Number of layers | 4, 8|
-Dropout rate | 0.1, 0.2|
-Number of epochs | 5, 10, 15, 20|
-Batch size | 32, 64, 128|
+Model size | 128, 256, 384, 512 |
+Number of Heads | 4,6,8|
+Number of layers | 3,4,5|
+Dropout rate | 0.1, 0.2, 0.3|
+Learning rate | ($e^{-6}, e^{-4}$)|
+Decay steps | 1000,2000,3000,4000,5000,6000,7000,8000,9000,10000|
+Decay rate | 0.9,0.91,0.92,...,0.99|
 
 ## Quantitative Measures
 
-Loss function that was being used is loss cross entropy
+Loss function that was being used is sparse categorical cross entropy since output is an integer instead of one hot encoded.
 $$L_{CE} = \sum_{i=1}^{N} t_i \log{y_i}$$
 $$\text{Accuracy} = \frac{\text{Number of correct predictions}}{\text{Number of data points}}$$
 
@@ -172,7 +173,7 @@ The test accuracy is 58.69%.
 
 ## Justification of Results
 
-Suppose there is a model that always predict the most frequent note TO BE FILLED IN, then the test accuracy of the hypothetical model is TO BE FILLED IN as illustrated in our code.
+Suppose there is a model that always predict the most frequent note 42, then the test accuracy of the hypothetical model is 6% (calculate the number of times ground truth is 42 divides the number of test data points).
 
 Therefore, the result obtain from our transformer model is acceptable. Moreover, predicting music is a difficult task since music depends on the artist, and different artist might have their own style, let alone if different music genre will have different melody. It is difficult to capture the pattern in art work since it offers lots of freedom and creativity. Moreover, the model was trained on mostly pop music, which means there is no guarantee the model will work well on other genres such as blues. The project can be extended to be a model whose input is sequence of notes, and output sequence of notes (until end of song) as well. This might be a better use of transformer since it makes use of decoder architecture that being parsed in the predicted output to generate even more notes. However, due to restricted computational resource, we could only build a model that predicts the next note given a sequence of 40 notes.
 
