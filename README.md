@@ -8,7 +8,7 @@ Due to restriction in computational resources, we had to pick a random subset of
 ## Data Summary
 Below is the summary of 99 songs' length initially:
 
-Count| 100  |
+Count| 99 |
 --- | --- |
 Mean | 8111 |
 Std |7468|
