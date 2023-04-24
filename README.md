@@ -164,15 +164,15 @@ $$\text{Accuracy} = \frac{\text{Number of correct predictions}}{\text{Number of 
 
 ## Quantitative and Qualitative Results
 
-The final model training accuracy is 39% with training loss of 2.1662
+The final model training accuracy is 65.31% with training loss of 1.2071
 
-The final model validation accuracy is 12.2% with validation loss of 3.5861
+The final model validation accuracy is 54.79% with validation loss of 1.7070
 
-The test accuracy is 14.97%.
+The test accuracy is 58.69%.
 
 ## Justification of Results
 
-Suppose there is a model that always predict the most frequent note (42), then the test accuracy of the hypothetical model is 6% as illustrated in our code.
+Suppose there is a model that always predict the most frequent note TO BE FILLED IN, then the test accuracy of the hypothetical model is TO BE FILLED IN as illustrated in our code.
 
 Therefore, the result obtain from our transformer model is acceptable. Moreover, predicting music is a difficult task since music depends on the artist, and different artist might have their own style, let alone if different music genre will have different melody. It is difficult to capture the pattern in art work since it offers lots of freedom and creativity. Moreover, the model was trained on mostly pop music, which means there is no guarantee the model will work well on other genres such as blues. The project can be extended to be a model whose input is sequence of notes, and output sequence of notes (until end of song) as well. This might be a better use of transformer since it makes use of decoder architecture that being parsed in the predicted output to generate even more notes. However, due to restricted computational resource, we could only build a model that predicts the next note given a sequence of 40 notes.
 
