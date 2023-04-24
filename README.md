@@ -53,9 +53,7 @@ Moreover, we should also look at the distribution for frequency of notes. This i
 
 ## Data Transformation
 
-Since there are 128 possible notes on a MIDI device, and they range from 0 to 127, we created one hot vector with 128 entries.For example, a middle C is a note number 60 will be denoted by number 1 at index 60 and 0 everywhere else. Moreover, a note 0 never appears in any of the song, so we used a note 0 (numbered 1 at the first index and 0 everywhere else) to indicate the end of a song. 
-
-We first fetch every note from a specific song, then we form sequences of 40 notes each as inputs to our model, and the note immediately the $40^{th}$ note is used as ground truth. For example, one valid pair of input-output is (($1^{st}$ note, $2^{nd}$ note,..., $40^{th}$ note), $41^{st}$ note).
+We first fetch every note from a specific song, then we form sequences of 250 notes each as inputs to our model, and the note immediately the $250^{th}$ note is used as ground truth. For example, one valid pair of input-output is (($1^{st}$ note, $2^{nd}$ note,..., $250^{th}$ note), $251^{st}$ note).
 
 ## Model Figure
 
@@ -163,15 +161,57 @@ Layer 37 : dense_38 = 65664 trainable weights
 
 The first example is from test set and the model predicted correctly:
 
-INSERT GROUND TRUTH
+Input sequence: [[76 74 50 59 53 57 59 53 57 50 66 62 74 61 73 66 62 50 57 38 74 66 62 59
 
-INSERT MODEL PREDICTION
+  35 59 59 35 62 74 38 69 71 61 73 74 62 50 66 62 35 38 59 62 35 49 35 61
+  
+  66 49 35 62 54 59 74 62 74 62 66 74 59 35 59 35 74 62 62 74 66 35 62 54
+  
+  47 59 62 59 53 54 59 53 59 66 62 74 61 74 62 62 62 35 59 66 66 59 62 59
+  
+  59 57 47 74 62 62 74 54 66 35 62 59 38 66 59 53 38 62 59 54 59 53 38 66
+  
+  38 47 35 66 59 59 35 66 62 59 54 66 71 57 59 53 66 62 59 53 59 54 62 71
+  
+  59 30 73 66 62 59 35 59 59 35 35 54 54 66 59 62 30 73 35 76 59 53 35 59
+  
+  53 35 54 66 59 62 54 59 59 66 59 62 62 74 54 35 76 74 59 53 62 59 53 59
+  
+  62 59 54 59 69 57 35 59 35 61 59 35 69 57 59 71 62 59 74 54 35 66 35 38
+  
+  73 66 59 53 38 62 59 53 38 59 54 59 71 57 69 62 38 62 35 54 59 35 59 59
+  
+  35 61 54 59 62 47 35 57 69 57]]
+  
+prediction vs output: 71 71
+
+Model prediction: 71
 
 The second example is from test set and the model predicted incorrectly:
 
-INSERT GROUND TRUTH
+Input sequence: [[66 28 28 28 28 61 61 42 42 61 61 28 28 28 28 35 64 46 64 35 46 28 28 28
 
-INSERT MODEL PREDICTION
+  28 42 42 64 64 28 28 28 28 43 38 61 61 43 38 40 47 61 61 52 28 28 28 28
+  
+  45 38 50 42 40 42 73 76 81 45 38 28 50 28 80 28 28 76 47 71 35 46 52 40
+  
+  40 35 46 28 28 28 28 59 59 42 42 59 59 28 28 28 28 38 46 61 61 38 46 61
+  
+  61 28 28 64 28 28 64 42 42 28 28 28 28 35 46 35 46 28 28 28 28 42 42 64
+  
+  64 28 28 28 28 38 61 61 46 38 46 61 61 28 28 28 28 42 42 71 76 80 28 28
+  
+  28 28 81 35 46 73 76 35 46 28 28 28 28 42 59 59 42 59 59 28 28 28 28 38
+  
+  61 46 61 38 46 61 61 28 28 64 64 28 28 42 42 28 28 28 28 35 46 35 46 28
+  
+  28 28 28 42 42 64 64 28 28 66 66 28 28 43 38 38 43 40 66 66 28 28 28 28
+  
+  38 42 42 38 73 81 76 28 28 28 28 35 46 40 76 80 71 35 46 28 28 59 64 28
+  
+  28 42 42 59 64 28 61 28 66 28]]
+  
+prediction vs output: 38 28
 
 ## Training Curve
 
