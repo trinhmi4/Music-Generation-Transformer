@@ -8,48 +8,42 @@ Due to restriction in computational resources, we had to pick a random subset of
 ## Data Summary
 Below is the summary of 99 songs' length initially:
 
-Count|  |
+Count| 100  |
 --- | --- |
-Mean |  |
-Std ||
-Min |  |
-25% |  |
-50%|  |
-75%| |
-Max| |
+Mean | 8111 |
+Std |7468|
+Min | 430 |
+25% | 4293 |
+50%|  6161|
+75%| 9450|
+Max| 60878 |
 
 
-According to the table, the weighted average song length (number of notes in a song) is 7683.37 while the median of the song length is 5360. This indicates that the data is heavily right skewed, which caused by extremely large observation. Moreover, the correct measure of central tendency here is median due to the existence of extreme outliers that affected both mean and standard deviation. Therefore, we decided to remove the song whose duration is exceptionally long so that the effect of this song (if it ends up in training set) will not outweigh the effect of the majority of other songs. Before removing outliers, we would like to check the histogram:
+According to the table, the weighted average song length (number of notes in a song) is 8111 while the median of the song length is 6161. This indicates that the data is heavily right skewed, which caused by extremely large observation. Moreover, the correct measure of central tendency here is median due to the existence of extreme outliers that affected both mean and standard deviation. Therefore, we decided to remove the song whose duration is exceptionally long so that the effect of this song (if it ends up in training set) will not outweigh the effect of the majority of other songs. Before removing outliers, we would like to check the histogram:
 
-<img src="images/hist.png" width="500">
+<img src="images/hist100.png" width="500">
 
-Two methods for detecting outliers were being used were detecting outliers
-by z-score and detecting outliers by IQR. In the first method, any data point having z-score above 3
-or below 3 would be categorized an outlier. In the second method, any data point outside the interval
-(Q1 − 1.5IQR, Q3 + 1.5IQR) is considered an outlier. However, the first method did not work since the
-number of outlier based on that method is 1 only. This is due to extreme outlier that increased the
-mean, and enlarged variance. The second method worked better since IQR is robust to outliers. After
-looking at the outliers, every song whose length is above Q3 + 1.5IQR of all songs' length will be removed.
+After looking at the outliers, every song whose length is at least 20000 will be removed.
 
 Below is the summary of 46 songs' length after removing outliers:
 
-Count| 46 |
+Count| 94 |
 --- | --- |
-Mean | 5473.34 |
-Std | 3038.59|
+Mean | 6899 |
+Std | 4076 |
 Min | 430 |
-25% | 3446 |
-50%| 5036 |
-75%| 7173 |
-Max| 12890 |
+25% | 4111 |
+50%| 6081|
+75%| 8993 |
+Max| 19514 |
 
 The histogram for distribution of songs' length after removing outliers is illustrated below:
 
-<img src="images/hist-after-outliers.png" width="500">
+<img src="images/hist94.png" width="500">
 
 Moreover, we should also look at the distribution for frequency of notes. This is because in the end, we would like to make sure our model performs at least better than a model always predicting the most frequent note. The mode (most frequent MIDI note) is 42, and the histogram of note frequency distribution is shown below:
 
-<img src="images/note_freq.png" width="500">
+<img src="images/note_freq94.png" width="500">
 
 ## Data Transformation
 
