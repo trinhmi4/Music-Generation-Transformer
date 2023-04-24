@@ -4,19 +4,19 @@ This project use a transformer model to produce music. Transformer is a type of 
 ## Data Source
 The dataset that was being used was downloaded from <a href="https://colinraffel.com/projects/lmd/" target="_blank">The Lakh MIDI Dataset</a>. The model uses Clean MIDI subset.
 ## Data Split
-Due to restriction in computational resources, we had to pick a random subset of 51 songs from Clean MIDI to work with. The chosen songs are stored in <a href="https://drive.google.com/drive/folders/1ffu0J6SJt_soSpeH1jP68LV0c-MUVdV2?usp=sharing" target="_blank">Google Drive</a>. 60% are training data, 20% are validation data, and the remaining is test data. We decided to split by songs instead of tokenizing the notes, then splitting train-validation-test because we would like to make sure no song would appear in both training and test set, since several parts of a song might have the same melody, and thus increase in test accuracy. This would not be a good indicator for how well our model performs on unseen data.
+Due to restriction in computational resources, we had to pick a random subset of 100 songs from Clean MIDI to work with. The chosen songs are stored in <a href="https://drive.google.com/drive/folders/1ffu0J6SJt_soSpeH1jP68LV0c-MUVdV2?usp=sharing" target="_blank">Google Drive</a>. 60% are training data, 20% are validation data, and the remaining is test data. We decided to split by songs instead of tokenizing the notes, then splitting train-validation-test because we would like to make sure no song would appear in both training and test set, since several parts of a song might have the same melody, and thus increase in test accuracy. This would not be a good indicator for how well our model performs on unseen data.
 ## Data Summary
 Below is the summary of 99 songs' length initially:
 
-Count| 51 |
+Count|  |
 --- | --- |
-Mean | 7683.37 |
-Std | 9038.92 |
-Min | 430 |
-25% | 3548.5 |
-50%| 5360 |
-75%| 8489 |
-Max| 60878 |
+Mean |  |
+Std ||
+Min |  |
+25% |  |
+50%|  |
+75%| |
+Max| |
 
 
 According to the table, the weighted average song length (number of notes in a song) is 7683.37 while the median of the song length is 5360. This indicates that the data is heavily right skewed, which caused by extremely large observation. Moreover, the correct measure of central tendency here is median due to the existence of extreme outliers that affected both mean and standard deviation. Therefore, we decided to remove the song whose duration is exceptionally long so that the effect of this song (if it ends up in training set) will not outweigh the effect of the majority of other songs. Before removing outliers, we would like to check the histogram:
@@ -57,8 +57,6 @@ Since there are 128 possible notes on a MIDI device, and they range from 0 to 12
 
 We first fetch every note from a specific song, then we form sequences of 40 notes each as inputs to our model, and the note immediately the $40^{th}$ note is used as ground truth. For example, one valid pair of input-output is (($1^{st}$ note, $2^{nd}$ note,..., $40^{th}$ note), $41^{st}$ note).
 
-Next, we convert each note in our input into one hot vector. Therefore, we have $40$ notes $\times$ $128$ entries per note = 5120 entries for one input data point. We implement the above process for every training points in our training set. 
-
 ## Model Figure
 
 Our transformer is a bit different than the standard transformer since we only output one note due to restricted computational resource. The number of times the encoder and decoder got repeated is TO BE FILLED IN NUMBER OF LAYERS.However, if the project is replicated to produce sequence of notes instead of one note, we can parsed in predicted output to the decoder and use masked multi head attention with a layer "Add and Norm" to combine with output from encode. 
@@ -86,41 +84,43 @@ Then the predicted output would be the category that receives highest probabilit
 
 Below is the summary of number of parameters in our model:
 
-Layer| Number of parameter |
---- | --- |
-Input layer | 0 |
-Layer Normalization | 256|
-Positional Encoding| 0 |
-MultiHead Attention | 131968 |
-Add| 0 |
-Normalization| 257|
-Dense| 16512|
-Add| 0 |
-Normalization| 257|
-MultiHead Attention | 131968 |
-Add| 0 |
-Normalization| 257|
-Dense| 16512|
-Add| 0 |
-Normalization| 257|
-MultiHead Attention | 131968 |
-Add| 0 |
-Normalization| 257|
-Dense| 16512|
-Add| 0 |
-Normalization| 257|
-MultiHead Attention | 131968 |
-Add| 0 |
-Normalization| 257|
-Dense| 16512|
-Add| 0 |
-Normalization| 257|
-Global Average Pooling | 0
-Drop out | 0
-Dense | 16512
-Total number of params | 612744
-Trainable Params | 610688
-Non-trainable params (from normalization): 2056
+Layer 1 : input_7 = 0 trainable weights
+Layer 2 : embedding_6 = 65536 trainable weights
+Layer 3 : layer_normalization_60 = 1024 trainable weights
+Layer 4 : positional_encoding_6 = 0 trainable weights
+Layer 5 : multi_head_attention_27 = 1046522 trainable weights
+Layer 6 : add_54 = 0 trainable weights
+Layer 7 : layer_normalization_61 = 1024 trainable weights
+Layer 8 : dense_33 = 262656 trainable weights
+Layer 9 : add_55 = 0 trainable weights
+Layer 10 : layer_normalization_62 = 1024 trainable weights
+Layer 11 : multi_head_attention_28 = 1046522 trainable weights
+Layer 12 : add_56 = 0 trainable weights
+Layer 13 : layer_normalization_63 = 1024 trainable weights
+Layer 14 : dense_34 = 262656 trainable weights
+Layer 15 : add_57 = 0 trainable weights
+Layer 16 : layer_normalization_64 = 1024 trainable weights
+Layer 17 : multi_head_attention_29 = 1046522 trainable weights
+Layer 18 : add_58 = 0 trainable weights
+Layer 19 : layer_normalization_65 = 1024 trainable weights
+Layer 20 : dense_35 = 262656 trainable weights
+Layer 21 : add_59 = 0 trainable weights
+Layer 22 : layer_normalization_66 = 1024 trainable weights
+Layer 23 : multi_head_attention_30 = 1046522 trainable weights
+Layer 24 : add_60 = 0 trainable weights
+Layer 25 : layer_normalization_67 = 1024 trainable weights
+Layer 26 : dense_36 = 262656 trainable weights
+Layer 27 : add_61 = 0 trainable weights
+Layer 28 : layer_normalization_68 = 1024 trainable weights
+Layer 29 : multi_head_attention_31 = 1046522 trainable weights
+Layer 30 : add_62 = 0 trainable weights
+Layer 31 : layer_normalization_69 = 1024 trainable weights
+Layer 32 : dense_37 = 262656 trainable weights
+Layer 33 : add_63 = 0 trainable weights
+Layer 34 : layer_normalization_70 = 1024 trainable weights
+Layer 35 : global_average_pooling1d_6 = 0 trainable weights
+Layer 36 : dropout_6 = 0 trainable weights
+Layer 37 : dense_38 = 65664 trainable weights
 
 ## Model Examples
 
@@ -140,6 +140,7 @@ INSERT MODEL PREDICTION
 
 Below is the training curve of our final model where blue line represents performance on training set and orange represents model performance on validation set:
 
+<img src="images/training_curve.png" width="500">
 <img src="images/training_curve2.png" width="500">
 
 ## Hyperparameter Tuning
