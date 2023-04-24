@@ -85,42 +85,79 @@ Then the predicted output would be the category that receives highest probabilit
 Below is the summary of number of parameters in our model:
 
 Layer 1 : input_7 = 0 trainable weights
+
 Layer 2 : embedding_6 = 65536 trainable weights
+
 Layer 3 : layer_normalization_60 = 1024 trainable weights
+
 Layer 4 : positional_encoding_6 = 0 trainable weights
+
 Layer 5 : multi_head_attention_27 = 1046522 trainable weights
+
 Layer 6 : add_54 = 0 trainable weights
+
 Layer 7 : layer_normalization_61 = 1024 trainable weights
+
 Layer 8 : dense_33 = 262656 trainable weights
+
 Layer 9 : add_55 = 0 trainable weights
+
 Layer 10 : layer_normalization_62 = 1024 trainable weights
+
 Layer 11 : multi_head_attention_28 = 1046522 trainable weights
+
 Layer 12 : add_56 = 0 trainable weights
+
 Layer 13 : layer_normalization_63 = 1024 trainable weights
+
 Layer 14 : dense_34 = 262656 trainable weights
+
 Layer 15 : add_57 = 0 trainable weights
+
 Layer 16 : layer_normalization_64 = 1024 trainable weights
+
 Layer 17 : multi_head_attention_29 = 1046522 trainable weights
+
 Layer 18 : add_58 = 0 trainable weights
+
 Layer 19 : layer_normalization_65 = 1024 trainable weights
+
 Layer 20 : dense_35 = 262656 trainable weights
+
 Layer 21 : add_59 = 0 trainable weights
+
 Layer 22 : layer_normalization_66 = 1024 trainable weights
+
 Layer 23 : multi_head_attention_30 = 1046522 trainable weights
+
 Layer 24 : add_60 = 0 trainable weights
+
 Layer 25 : layer_normalization_67 = 1024 trainable weights
+
 Layer 26 : dense_36 = 262656 trainable weights
+
 Layer 27 : add_61 = 0 trainable weights
+
 Layer 28 : layer_normalization_68 = 1024 trainable weights
+
 Layer 29 : multi_head_attention_31 = 1046522 trainable weights
+
 Layer 30 : add_62 = 0 trainable weights
+
 Layer 31 : layer_normalization_69 = 1024 trainable weights
+
 Layer 32 : dense_37 = 262656 trainable weights
+
 Layer 33 : add_63 = 0 trainable weights
+
 Layer 34 : layer_normalization_70 = 1024 trainable weights
+
 Layer 35 : global_average_pooling1d_6 = 0 trainable weights
+
 Layer 36 : dropout_6 = 0 trainable weights
+
 Layer 37 : dense_38 = 65664 trainable weights
+
 
 ## Model Examples
 
@@ -157,6 +194,7 @@ Learning rate | ($e^{-6}, e^{-4}$)|
 Decay steps | 1000,2000,3000,4000,5000,6000,7000,8000,9000,10000|
 Decay rate | 0.9,0.91,0.92,...,0.99|
 
+Finally, the best combination of hyperparameters is model size 512, number of heads 6, number of layers 5, dropout rate 0.1, learning rate, $5.6189e^{-5}$, decay steps 8000, decay rate 0.9
 ## Quantitative Measures
 
 Loss function that was being used is sparse categorical cross entropy since output is an integer instead of one hot encoded.
