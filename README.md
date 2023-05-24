@@ -218,10 +218,5 @@ credit to them. Moreover, AI generated music would also be unfair to the artists
 spent a great amount of hours to create art whereas the model learnt from them and is able to create
 art at a much faster rate. Therefore, this seems to invalidate real artists’ effort.
 
-## Author
-Ali: Data transformation, pair coding with Ramzi to write code for transformer
-Ramzi: pair coding with Ali to write code for transformer, provide code for graphing model performance
-Minh: Data exploration, write up readme file
-
 ## References
 - Lab 5 from CSC311 Fall 2022
